@@ -3,7 +3,9 @@
   "version": "1.5.0",
   "description": "Webpack 入门与实践",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack-dev-server",
+    "build": "webpack",
+    "prettier": "prettier --write '**/*.{js,jsx,less,md}'",
     "tag": "npm version minor",
     "tag:del": "node script/tag.js DEL"
   },
@@ -29,6 +31,7 @@
     "html-webpack-plugin": "^4.3.0",
     "prettier": "^2.0.5",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }

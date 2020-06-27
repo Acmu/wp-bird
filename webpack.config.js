@@ -10,10 +10,11 @@ module.exports = {
     filename: '[name]_[chunkhash:8].js',
   },
   mode: 'development',
-  watch: true,
   watchOptions: {
     aggregateTimeout: 600,
+    // 轮询间隔
     poll: 1500,
+    // 忽略监听这些文件
     ignored: /node_modules/,
   },
   plugins: [
@@ -22,4 +23,8 @@ module.exports = {
       template: './public/index.html',
     }),
   ],
+  devServer: {
+    // 自动打开浏览器网页
+    open: true,
+  },
 };

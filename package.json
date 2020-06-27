@@ -4,7 +4,7 @@
   "description": "Webpack 入门与实践",
   "scripts": {
     "start": "webpack",
-    "tag": "node script/tag.js",
+    "tag": "npm version minor",
     "tag:del": "node script/tag.js DEL"
   },
   "repository": {

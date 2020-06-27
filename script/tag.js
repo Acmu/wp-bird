@@ -2,6 +2,7 @@
  * @description 简单方便打 tag
  */
 
+// 使用 npm version minor 等可以自动打 tag，此脚本可废弃
 const path = require('path');
 const childProcess = require('child_process');
 const curVer = `v${require('../package.json').version}`;
@@ -14,7 +15,7 @@ const main = async () => {
       childProcess.exec(
         `git tag ${isDel ? '-d' : ''} ${curVer}`,
         { cwd: path.join(__dirname, '..') },
-        (error) => {
+        error => {
           if (error) {
             reject(error);
             return;

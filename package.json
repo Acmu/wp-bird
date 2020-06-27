@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Webpack 入门与实践",
   "scripts": {
-    "start": "echo 1",
+    "start": "webpack",
     "tag": "node script/tag.js",
     "tag:del": "node script/tag.js DEL"
   },

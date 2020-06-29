@@ -17,7 +17,13 @@ module.exports = {
     ignored: /node_modules/,
   },
   module: {
-    rules: [{ test: /\.ts$/, use: 'ts-loader' }],
+    rules: [
+      {
+        test: /\.less$/,
+        use: ['style-loader', { loader: 'css-loader', options: { modules: true } }, 'less-loader'],
+      },
+      { test: /\.ts$/, use: 'ts-loader' },
+    ],
   },
   resolve: {
     extensions: ['.ts', '.js'],

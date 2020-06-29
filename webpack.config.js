@@ -3,8 +3,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: './src/index.js',
-    another: './src/c.js',
+    app: './src/index.ts',
   },
   output: {
     filename: '[name]_[chunkhash:8].js',
@@ -17,6 +16,13 @@ module.exports = {
     // 忽略监听这些文件
     ignored: /node_modules/,
   },
+  module: {
+    rules: [{ test: /\.ts$/, use: 'ts-loader' }],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({

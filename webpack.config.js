@@ -22,7 +22,19 @@ module.exports = {
         test: /\.less$/,
         use: ['style-loader', { loader: 'css-loader', options: { modules: true } }, 'less-loader'],
       },
-      { test: /\.ts$/, use: 'ts-loader' },
+      {
+        test: /\.ts$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
+          'ts-loader',
+        ],
+      },
     ],
   },
   resolve: {

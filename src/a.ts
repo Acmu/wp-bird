@@ -11,6 +11,6 @@ const lastName = 'Zheng';
 
 console.log(`I'm ${firstName} ${lastName}`);
 
-// zmy
+// zm
 
 export const a = 'hello ts';

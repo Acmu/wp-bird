@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const nuDemoPlugin = require('nu-demo-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -58,6 +59,7 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   plugins: [
+    new nuDemoPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',

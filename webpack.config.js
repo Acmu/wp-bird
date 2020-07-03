@@ -19,15 +19,23 @@ module.exports = {
   module: {
     rules: [
       {
-        use: ['style-loader', { loader: 'css-loader', options: { modules: true } }, 'less-loader'],
-        resource: {
-          test: /\.less$/,
-          exclude: /node_modules/,
-        },
-        issuer: {
-          test: /\.ts$/,
-          include: /src/,
-        },
+        test: /\.less$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local',
+                exportGlobals: true,
+                localIdentName: '[path][name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+          'postcss-loader',
+          'less-loader',
+        ],
       },
       {
         test: /\.ts$/,

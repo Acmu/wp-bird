@@ -19,28 +19,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.less$/,
         use: ['style-loader', { loader: 'css-loader', options: { modules: true } }, 'less-loader'],
-      },
-      {
-        test: /\.ts$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env'],
-            },
-          },
-          'ts-loader',
-        ],
+        resource: {
+          test: /\.less$/,
+          exclude: /node_modules/,
+        },
+        issuer: {
+          test: /\.ts$/,
+          include: /src/,
+        },
       },
     ],
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
-  // devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -49,6 +43,6 @@ module.exports = {
   ],
   devServer: {
     // 自动打开浏览器网页
-    open: true,
+    // open: true,
   },
 };

@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "autoprefixer": "^9.8.4",
+    "nu-demo-loader": "^1.0.0",
     "postcss-loader": "^3.0.0"
   }
 }

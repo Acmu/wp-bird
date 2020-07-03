@@ -48,6 +48,7 @@ module.exports = {
             },
           },
           'ts-loader',
+          'nu-demo-loader',
         ],
       },
     ],
